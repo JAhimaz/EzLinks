@@ -11,4 +11,4 @@ commands:
   links:
     description: Opens The Links Menu
     usage: /<command>
-    aliases: [link, websites]
+    aliases: [link, websites, urls]

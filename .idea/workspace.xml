@@ -3,22 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b92378e-a116-486c-9703-474282cbb85f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/EzLinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/EzLinks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/inventory/InventoryCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/inventory/InventoryCalculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/inventory/LinkInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/inventory/LinkInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/inventory/LinkSites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/inventory/LinkSites.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/misc/BooleanToToggled.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/misc/MiscFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/EzLinks-1.0.0-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/EzLinks-1.0.0-shaded.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/EzLinks-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/EzLinks-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/EzLinks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/EzLinks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/inventory/InventoryCalculation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/inventory/InventoryCalculation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/inventory/LinkInventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/inventory/LinkInventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/inventory/LinkSites.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/inventory/LinkSites.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/misc/BooleanToToggled.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-EzLinks-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-EzLinks-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583803787603</updated>
-      <workItem from="1583803794756" duration="26918000" />
+      <workItem from="1583803794756" duration="27158000" />
     </task>
     <servers />
   </component>
