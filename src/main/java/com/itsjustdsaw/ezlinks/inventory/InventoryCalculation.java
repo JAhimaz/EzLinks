@@ -13,14 +13,25 @@ public class InventoryCalculation {
     }
 
     public static int InventSize(List<LinkSites> numberOfLinks){
-
-        int inventSize = 0;
-
-        if(numberOfLinks.size() < 9){
-            inventSize = 54;
+        if(numberOfLinks.size() <= 54){
+            if(numberOfLinks.size() <= 45){
+                if(numberOfLinks.size() <= 36){
+                    if(numberOfLinks.size() <= 27){
+                        if(numberOfLinks.size() <= 18){
+                            if(numberOfLinks.size() <= 9){
+                                return 9;
+                            }
+                            return 18;
+                        }
+                        return 27;
+                    }
+                    return 36;
+                }
+                return 45;
+            }
+            return 54;
         }
-
-        return inventSize;
+        return 0;
     }
 
 }

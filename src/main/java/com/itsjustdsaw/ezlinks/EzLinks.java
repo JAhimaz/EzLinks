@@ -3,6 +3,7 @@ package com.itsjustdsaw.ezlinks;
 import com.itsjustdsaw.ezlinks.inventory.InventoryCalculation;
 import com.itsjustdsaw.ezlinks.inventory.LinkInventory;
 import com.itsjustdsaw.ezlinks.inventory.LinkSites;
+import com.itsjustdsaw.ezlinks.misc.MiscFiles;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -23,7 +24,8 @@ public final class EzLinks extends JavaPlugin {
         // Plugin startup logic
         loadConfig();
         loadPlugin();
-        enabledMessage();
+        siteCheck();
+        System.out.println("LinkMenu Has Been Enabled! Thank You For Using My Plugin");
     }
 
     @Override
@@ -36,7 +38,23 @@ public final class EzLinks extends JavaPlugin {
         if(command.getName().equals("links")){
             if(sender instanceof Player){
                 Player player = (Player) sender;
-                linksMenu.openInventory(player);
+                if(args.length == 0){
+                    linksMenu.openInventory(player);
+                }
+                else if(args.length == 1){
+                    if (args[0].equalsIgnoreCase("reload")) {
+                        sites.clear();
+                        reloadConfig();
+                        loadPlugin();
+                        siteCheck();
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix")) + " Reloaded The Config!");
+                    }
+                    if (args[0].equalsIgnoreCase("help")) {
+                        System.out.println("Help");
+                    }
+                }else{
+                    player.sendMessage("Invalid Command? Do /links help for Commands");
+                }
             }
         }
         return true;
@@ -58,25 +76,30 @@ public final class EzLinks extends JavaPlugin {
     }
 
     private void createLinkInventory() {
-        String inventTitle = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Link-Menu-Title").replace("%Server%", getServer().getIp()));
+        String inventTitle = ChatColor.translateAlternateColorCodes('&', getConfig().getString("link-menu-title"));
 
         for(String key : getConfig().getConfigurationSection("Links").getKeys(false)){
-            sites.add(new LinkSites(key, getConfig().getString("Links." + key + ".LinkURL"), getConfig().getString("Links." + key + ".DisplayItem")));
+            sites.add(new LinkSites(key, getConfig().getString("Links." + key + ".LinkURL")));
         }
 
         int inventSize = InventoryCalculation.InventSize(sites);
 
-        linksMenu = new LinkInventory(this, inventSize, inventTitle);
-        linksMenu.initializeItems(sites);
+        linksMenu = new LinkInventory(this, inventSize, inventTitle, sites);
+        linksMenu.initializeItems();
     }
 
-    private void enabledMessage(){
+    private void siteCheck(){
         System.out.println("=======================================================");
         System.out.println("Currently Linked Websites:");
         for(int i = 0; i < sites.size(); i++){
-            System.out.println(sites.get(i).getName() + ": " + ChatColor.GREEN + "LOADED");
+            if(MiscFiles.urlChecker(sites.get(i).getUrl())){
+                System.out.println(sites.get(i).getName() + ": " + ChatColor.GREEN + "LOADED");
+            }else{
+                System.out.println(sites.get(i).getName() + ": " + ChatColor.RED + "NOT CONFIGURED PROPERLY");
+            }
         }
-        System.out.println("LinkMenu Has Been Enabled! Thank You For Using My Plugin");
         System.out.println("=======================================================");
     }
+
+
 }

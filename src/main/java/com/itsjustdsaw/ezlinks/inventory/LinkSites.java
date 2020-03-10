@@ -5,12 +5,11 @@ import org.bukkit.Material;
 public class LinkSites {
     private String name;
     private String url;
-    private String material;
 
-    public LinkSites(String name, String url, String material) {
+    public LinkSites(String name, String url) {
         this.name = name;
         this.url = url;
-        this.material = material;
+
     }
 
     public String getName() {
@@ -21,8 +20,4 @@ public class LinkSites {
         return this.url;
     }
 
-    public Material getMaterial() {
-        Material m = Material.matchMaterial(this.material);
-        return m;
-    }
 }

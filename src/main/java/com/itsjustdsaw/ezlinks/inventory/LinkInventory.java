@@ -1,7 +1,9 @@
 package com.itsjustdsaw.ezlinks.inventory;
 
 import com.itsjustdsaw.ezlinks.EzLinks;
+import com.itsjustdsaw.ezlinks.misc.MiscFiles;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,13 +20,15 @@ import java.util.List;
 
 public class LinkInventory implements InventoryHolder, Listener {
 
+    private List<LinkSites> websites;
     private Inventory linkMenu;
 
     //Linking To Main To Access Config
     private EzLinks plugin;
 
-    public LinkInventory(EzLinks instance, int size, String title) {
+    public LinkInventory(EzLinks instance, int size, String title, List<LinkSites> sites) {
         this.plugin = instance;
+        websites = sites;
         linkMenu = Bukkit.createInventory(this, size, title);
     }
 
@@ -33,20 +37,38 @@ public class LinkInventory implements InventoryHolder, Listener {
         return linkMenu;
     }
 
-    public void initializeItems(List<LinkSites> websites) {
-            for(int i = 0; i < websites.size(); i++){
+    public void initializeItems() {
+        for(int i = 0; i < websites.size(); i++){
             linkMenu.addItem(createLinkItem(websites.get(i)));
         }
     }
 
     private ItemStack createLinkItem(LinkSites website){
-        ItemStack item = new ItemStack(website.getMaterial(), 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§f§l" + website.getName());
-        meta.setLocalizedName(website.getName());
-        item.setItemMeta(meta);
+        Material websiteMaterial;
+        if(MiscFiles.urlChecker(website.getUrl())){
+            websiteMaterial = Material.EMERALD_BLOCK;
 
-        return item;
+            ItemStack item = new ItemStack(websiteMaterial, 1);
+            ItemMeta meta = item.getItemMeta();
+            meta.setDisplayName("§f§l" + website.getName());
+            meta.setLocalizedName(website.getName());
+            item.setItemMeta(meta);
+
+            return item;
+        }else{
+            websiteMaterial = Material.REDSTONE_BLOCK;
+            List<String> lore = new ArrayList<>();
+            lore.add("Invalid Website URL");
+
+            ItemStack item = new ItemStack(websiteMaterial, 1);
+            ItemMeta meta = item.getItemMeta();
+            meta.setDisplayName("§f§l" + website.getName());
+            meta.setLocalizedName(website.getName());
+            meta.setLore(lore);
+            item.setItemMeta(meta);
+
+            return item;
+        }
     }
 
     public void openInventory(Player p) {
@@ -68,6 +90,12 @@ public class LinkInventory implements InventoryHolder, Listener {
 
         if (clickedItem == null || clickedItem.getType() == Material.AIR) return;
 
-        p.sendMessage("You clicked on " + clickedItem.getItemMeta().getDisplayName());
+        for(int i = 0; i < websites.size(); i++){
+            if(clickedItem.getItemMeta().getLocalizedName().equals(websites.get(i).getName())){
+                p.sendMessage(ChatColor.BLUE + clickedItem.getItemMeta().getLocalizedName() + ":");
+                p.sendMessage(ChatColor.UNDERLINE + websites.get(i).getUrl());
+                e.getWhoClicked().closeInventory();
+            }
+        }
     }
 }
