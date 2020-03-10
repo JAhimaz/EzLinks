@@ -1,0 +1,20 @@
+# Plugin Created By JAhimaz | ItsJustDsAW
+
+############################################################
+# +------------------------------------------------------+ #
+# |                  = EZ LINKS CONFIG =                 | #
+# |                     VERSION 1.0.0                    | #
+# +------------------------------------------------------+ #
+############################################################
+
+# The Title On The Top Of The Link Menu GUI
+Link-Menu-Title: "&a%Server% &rLinks"
+
+# > Feel Free To Add More Link Sites (Maximum 53)
+Links:
+  Facebook:
+    LinkURL: "https://www.facebook.com/"
+    DisplayItem: "DIAMOND"
+  Discord:
+    LinkURL: "https://discord.gg/EAcPrQV"
+    DisplayItem: "EMERALD"

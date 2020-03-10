@@ -1,0 +1,13 @@
+name: EzLinks
+version: ${project.version}
+main: com.itsjustdsaw.ezlinks.EzLinks
+api-version: 1.13
+authors: [ItsJustDsAW]
+load: STARTUP
+description: Easy access to all Server-related Links with a single command (Customisable)
+website: github.com/JAhimaz
+commands:
+  links:
+    description: Opens The Links Menu
+    usage: /<command>
+    aliases: [link, websites]

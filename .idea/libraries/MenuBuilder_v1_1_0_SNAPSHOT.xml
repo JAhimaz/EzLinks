@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MenuBuilder_v1.1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../APIs/MenuBuilder_v1.1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
