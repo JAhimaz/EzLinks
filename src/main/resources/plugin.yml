@@ -8,7 +8,7 @@ description: Easy access to all Server-related Links with a single command (Cust
 website: github.com/JAhimaz
 prefix: EzLinks
 commands:
-  links:
+  ezlinks:
     description: Opens The Links Menu
     usage: /<command>
-    aliases: [link, websites, urls]
+    aliases: [links, urls]

@@ -92,7 +92,7 @@ public class LinkInventory implements InventoryHolder, Listener {
 
         for(int i = 0; i < websites.size(); i++){
             if(clickedItem.getItemMeta().getLocalizedName().equals(websites.get(i).getName())){
-                p.sendMessage(ChatColor.BLUE + clickedItem.getItemMeta().getLocalizedName() + ":");
+                p.sendMessage(ChatColor.AQUA + clickedItem.getItemMeta().getLocalizedName() + ":");
                 p.sendMessage(ChatColor.UNDERLINE + websites.get(i).getUrl());
                 e.getWhoClicked().closeInventory();
             }

@@ -7,6 +7,7 @@ import com.itsjustdsaw.ezlinks.misc.MiscFiles;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -35,25 +36,51 @@ public final class EzLinks extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(command.getName().equals("links")){
+        if(command.getName().equals("ezlinks")){
+            if(sender instanceof ConsoleCommandSender){
+                if(args.length == 0){
+                    System.out.println("Sorry You Cannot Run This From The Console!");
+                }else if (args.length == 1){
+                    if (args[0].equalsIgnoreCase("reload")) {
+                        sites.clear();
+                        reloadConfig();
+                        loadPlugin();
+                        siteCheck();
+                        System.out.println(ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix")) + " Reloaded The Config!");
+                    }else if (args[0].equalsIgnoreCase("help")) {
+                        System.out.println(ChatColor.AQUA + "\n==========================================");
+                        System.out.println(ChatColor.AQUA + "/links|ezlinks|urls");
+                        System.out.println(ChatColor.AQUA + "/links|ezlinks|urls reload");
+                        System.out.println(ChatColor.AQUA + "/links|ezlinks|urls help");
+                        System.out.println(ChatColor.AQUA + "==========================================\n");
+                    }
+                }
+            }
             if(sender instanceof Player){
                 Player player = (Player) sender;
                 if(args.length == 0){
                     linksMenu.openInventory(player);
                 }
                 else if(args.length == 1){
-                    if (args[0].equalsIgnoreCase("reload")) {
+                    if (args[0].equalsIgnoreCase("reload") && player.hasPermission("ezlinks.reload")) {
                         sites.clear();
                         reloadConfig();
                         loadPlugin();
                         siteCheck();
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix")) + " Reloaded The Config!");
+                    }else if(args[0].equalsIgnoreCase("reload") && !(player.hasPermission("ezlinks.reload"))){
+                        player.sendMessage(ChatColor.RED + "Sorry, You Don't Have Permission To Access That Command!");
                     }
                     if (args[0].equalsIgnoreCase("help")) {
-                        System.out.println("Help");
+                        player.sendMessage(ChatColor.AQUA + "\n==========================================\n");
+                        player.sendMessage(ChatColor.AQUA + "EzLinks v1.0.0 by JAhimaz\n");
+                        player.sendMessage(ChatColor.AQUA + "/links|ezlinks|urls");
+                        player.sendMessage(ChatColor.AQUA + "/links|ezlinks|urls reload");
+                        player.sendMessage(ChatColor.AQUA + "/links|ezlinks|urls help");
+                        player.sendMessage(ChatColor.AQUA + "\n==========================================\n");
                     }
                 }else{
-                    player.sendMessage("Invalid Command? Do /links help for Commands");
+                    player.sendMessage("Invalid Command? Do /ezlinks help for Commands");
                 }
             }
         }
