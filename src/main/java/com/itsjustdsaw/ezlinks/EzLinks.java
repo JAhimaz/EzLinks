@@ -36,7 +36,19 @@ public final class EzLinks extends JavaPlugin {
         if(command.getName().equals("links")){
             if(sender instanceof Player){
                 Player player = (Player) sender;
-                linksMenu.openInventory(player);
+                if(args.length == 0){
+                    linksMenu.openInventory(player);
+                }
+                else if(args.length == 1){
+                    if (args[0].equalsIgnoreCase("reload")) {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix")) + " Reloaded The Config!");
+                    }
+                    if (args[0].equalsIgnoreCase("help")) {
+                        System.out.println("Help");
+                    }
+                }else{
+                    player.sendMessage("Invalid Command? Do /links help for Commands");
+                }
             }
         }
         return true;
@@ -58,7 +70,7 @@ public final class EzLinks extends JavaPlugin {
     }
 
     private void createLinkInventory() {
-        String inventTitle = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Link-Menu-Title").replace("%Server%", getServer().getIp()));
+        String inventTitle = ChatColor.translateAlternateColorCodes('&', getConfig().getString("link-menu-title"));
 
         for(String key : getConfig().getConfigurationSection("Links").getKeys(false)){
             sites.add(new LinkSites(key, getConfig().getString("Links." + key + ".LinkURL"), getConfig().getString("Links." + key + ".DisplayItem")));
@@ -66,8 +78,8 @@ public final class EzLinks extends JavaPlugin {
 
         int inventSize = InventoryCalculation.InventSize(sites);
 
-        linksMenu = new LinkInventory(this, inventSize, inventTitle);
-        linksMenu.initializeItems(sites);
+        linksMenu = new LinkInventory(this, inventSize, inventTitle, sites);
+        linksMenu.initializeItems();
     }
 
     private void enabledMessage(){

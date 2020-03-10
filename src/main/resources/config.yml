@@ -7,8 +7,11 @@
 # +------------------------------------------------------+ #
 ############################################################
 
+# Plugin Prefix
+plugin-prefix: "&3[EZLinks]"
+
 # The Title On The Top Of The Link Menu GUI
-Link-Menu-Title: "&a%Server% &rLinks"
+link-menu-title: "&3EzLinks &3Website Links"
 
 # > Feel Free To Add More Link Sites (Maximum 53)
 Links:

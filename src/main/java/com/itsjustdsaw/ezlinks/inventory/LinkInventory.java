@@ -18,13 +18,15 @@ import java.util.List;
 
 public class LinkInventory implements InventoryHolder, Listener {
 
+    private List<LinkSites> websites;
     private Inventory linkMenu;
 
     //Linking To Main To Access Config
     private EzLinks plugin;
 
-    public LinkInventory(EzLinks instance, int size, String title) {
+    public LinkInventory(EzLinks instance, int size, String title, List<LinkSites> sites) {
         this.plugin = instance;
+        websites = sites;
         linkMenu = Bukkit.createInventory(this, size, title);
     }
 
@@ -33,8 +35,8 @@ public class LinkInventory implements InventoryHolder, Listener {
         return linkMenu;
     }
 
-    public void initializeItems(List<LinkSites> websites) {
-            for(int i = 0; i < websites.size(); i++){
+    public void initializeItems() {
+        for(int i = 0; i < websites.size(); i++){
             linkMenu.addItem(createLinkItem(websites.get(i)));
         }
     }
@@ -68,6 +70,8 @@ public class LinkInventory implements InventoryHolder, Listener {
 
         if (clickedItem == null || clickedItem.getType() == Material.AIR) return;
 
-        p.sendMessage("You clicked on " + clickedItem.getItemMeta().getDisplayName());
+
+
+        p.sendMessage("You clicked on " + clickedItem.getItemMeta().getLocalizedName());
     }
 }

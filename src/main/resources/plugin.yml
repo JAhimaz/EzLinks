@@ -6,6 +6,7 @@ authors: [ItsJustDsAW]
 load: STARTUP
 description: Easy access to all Server-related Links with a single command (Customisable)
 website: github.com/JAhimaz
+prefix: EzLinks
 commands:
   links:
     description: Opens The Links Menu
