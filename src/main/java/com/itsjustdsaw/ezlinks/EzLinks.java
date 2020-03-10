@@ -60,7 +60,6 @@ public final class EzLinks extends JavaPlugin {
     private void createLinkInventory() {
         String inventTitle = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Link-Menu-Title").replace("%Server%", getServer().getIp()));
 
-
         for(String key : getConfig().getConfigurationSection("Links").getKeys(false)){
             sites.add(new LinkSites(key, getConfig().getString("Links." + key + ".LinkURL"), getConfig().getString("Links." + key + ".DisplayItem")));
         }

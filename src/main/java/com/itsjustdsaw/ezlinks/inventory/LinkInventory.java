@@ -35,22 +35,17 @@ public class LinkInventory implements InventoryHolder, Listener {
 
     public void initializeItems(List<LinkSites> websites) {
             for(int i = 0; i < websites.size(); i++){
-            linkMenu.addItem(createGuiItem(Material.DIAMOND, "§f§l" + websites.get(i).getName()));
+            linkMenu.addItem(createLinkItem(websites.get(i)));
         }
     }
 
-    private ItemStack createGuiItem(Material material, String name, String...lore) {
-        ItemStack item = new ItemStack(material, 1);
+    private ItemStack createLinkItem(LinkSites website){
+        ItemStack item = new ItemStack(website.getMaterial(), 1);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(name);
-        ArrayList<String> metaLore = new ArrayList<String>();
-
-        for(String loreComments : lore) {
-            metaLore.add(loreComments);
-        }
-
-        meta.setLore(metaLore);
+        meta.setDisplayName("§f§l" + website.getName());
+        meta.setLocalizedName(website.getName());
         item.setItemMeta(meta);
+
         return item;
     }
 

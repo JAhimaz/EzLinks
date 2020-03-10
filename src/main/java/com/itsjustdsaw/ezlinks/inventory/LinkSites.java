@@ -1,5 +1,7 @@
 package com.itsjustdsaw.ezlinks.inventory;
 
+import org.bukkit.Material;
+
 public class LinkSites {
     private String name;
     private String url;
@@ -19,7 +21,8 @@ public class LinkSites {
         return this.url;
     }
 
-    public String getMaterial() {
-        return this.material;
+    public Material getMaterial() {
+        Material m = Material.matchMaterial(this.material);
+        return m;
     }
 }
