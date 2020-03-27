@@ -7,11 +7,17 @@
 # +------------------------------------------------------+ #
 ############################################################
 
+# For MineCraft Colour Codes Check Out https://www.colorschemer.com/minecraft-color-codes/
+
 # Plugin Prefix
 plugin-prefix: "&3[EZLinks]"
 
 # The Title On The Top Of The Link Menu GUI
 link-menu-title: "&3EzLinks &3Website Links"
+
+# Enable Player Join Message (Tells The Player To Check Out Server links)
+enable-join-message: true
+join-message: "&fCheck Out The Server Links Using &a/links"
 
 # > To Add More Sites Follow The Format
 # > Do Note That The URL Must Be Properly Formatted, For Example
@@ -27,4 +33,5 @@ Links:
     LinkURL: "http://facebook.com"
   Discord:
     LinkURL: "https://discordapp.com/invite/"
+
 # =================== END OF CONFIG =====================

@@ -4,6 +4,7 @@ import com.itsjustdsaw.ezlinks.inventory.InventoryCalculation;
 import com.itsjustdsaw.ezlinks.inventory.LinkInventory;
 import com.itsjustdsaw.ezlinks.inventory.LinkSites;
 import com.itsjustdsaw.ezlinks.misc.MiscFiles;
+import com.itsjustdsaw.ezlinks.player.PlayerJoinMessage;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -98,8 +99,10 @@ public final class EzLinks extends JavaPlugin {
 
     private void loadPlugin(){
         InventoryCalculation inventCalc = new InventoryCalculation(this);
+        PlayerJoinMessage playerJoin = new PlayerJoinMessage(this);
         createLinkInventory();
         getServer().getPluginManager().registerEvents(linksMenu, this);
+        getServer().getPluginManager().registerEvents(playerJoin, this);
     }
 
     private void createLinkInventory() {
