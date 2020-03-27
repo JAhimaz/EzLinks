@@ -25,7 +25,7 @@ public class PlayerJoinMessage implements Listener {
             String joinMessage = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("join-message"));
 
             Player player = e.getPlayer();
-            player.sendMessage(joinMessage);
+            Bukkit.getScheduler ().runTaskLater (plugin, () -> player.sendMessage(joinMessage), 40);
         }
     }
 

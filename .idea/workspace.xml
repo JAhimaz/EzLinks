@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b92378e-a116-486c-9703-474282cbb85f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_15_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_15_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_15_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_15_2_R0_1_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/EzLinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/EzLinks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/EzLinks-1.0.0-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/EzLinks-1.0.0-shaded.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/EzLinks-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/EzLinks-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-EzLinks-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-EzLinks-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/player/PlayerJoinMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/ezlinks/player/PlayerJoinMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/EzLinks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/ezlinks/EzLinks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +37,7 @@
       <MavenImportingSettings>
         <option name="downloadDocsAutomatically" value="true" />
         <option name="downloadSourcesAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -102,7 +108,7 @@
       <workItem from="1583803794756" duration="31587000" />
       <workItem from="1584021613148" duration="991000" />
       <workItem from="1584611512175" duration="203000" />
-      <workItem from="1585286317931" duration="1584000" />
+      <workItem from="1585286317931" duration="4270000" />
     </task>
     <servers />
   </component>
@@ -118,22 +124,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583804529985" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1583842198327">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585290700509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583842198327" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1583842198326">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585290700509" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585290700509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583842198326" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1583842198326">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585290700509" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585290700509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583842198326" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1583842198326">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585290700509" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585290700509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583842198326" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585290700509" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1583816765949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

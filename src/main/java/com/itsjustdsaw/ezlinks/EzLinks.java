@@ -25,7 +25,8 @@ public final class EzLinks extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         loadConfig();
-        loadPlugin();
+        loadPlayerJoinPlugin();
+        loadInventoryPlugin();
         siteCheck();
         System.out.println("LinkMenu Has Been Enabled! Thank You For Using My Plugin");
     }
@@ -45,7 +46,7 @@ public final class EzLinks extends JavaPlugin {
                     if (args[0].equalsIgnoreCase("reload")) {
                         sites.clear();
                         reloadConfig();
-                        loadPlugin();
+                        loadInventoryPlugin();
                         siteCheck();
                         System.out.println(ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix")) + " Reloaded The Config!");
                     }else if (args[0].equalsIgnoreCase("help")) {
@@ -66,7 +67,7 @@ public final class EzLinks extends JavaPlugin {
                     if (args[0].equalsIgnoreCase("reload") && player.hasPermission("ezlinks.reload")) {
                         sites.clear();
                         reloadConfig();
-                        loadPlugin();
+                        loadInventoryPlugin();
                         siteCheck();
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix")) + " Reloaded The Config!");
                     }else if(args[0].equalsIgnoreCase("reload") && !(player.hasPermission("ezlinks.reload"))){
@@ -97,12 +98,15 @@ public final class EzLinks extends JavaPlugin {
         saveDefaultConfig();
     }
 
-    private void loadPlugin(){
-        InventoryCalculation inventCalc = new InventoryCalculation(this);
+    private void loadPlayerJoinPlugin(){
         PlayerJoinMessage playerJoin = new PlayerJoinMessage(this);
+        getServer().getPluginManager().registerEvents(playerJoin, this);
+    }
+
+    private void loadInventoryPlugin(){
+        InventoryCalculation inventCalc = new InventoryCalculation(this);
         createLinkInventory();
         getServer().getPluginManager().registerEvents(linksMenu, this);
-        getServer().getPluginManager().registerEvents(playerJoin, this);
     }
 
     private void createLinkInventory() {

@@ -1,6 +1,7 @@
 com\itsjustdsaw\ezlinks\misc\MiscFiles.class
 com\itsjustdsaw\ezlinks\inventory\InventoryCalculation.class
 com\itsjustdsaw\ezlinks\EzLinks.class
+com\itsjustdsaw\ezlinks\player\PlayerJoinMessage.class
 com\itsjustdsaw\ezlinks\inventory\LinkInventory.class
 com\itsjustdsaw\ezlinks\inventory\LinkSites.class
 com\itsjustdsaw\ezlinks\misc\ColourFromConfig.class
